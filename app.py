@@ -941,7 +941,7 @@ if selected == 'Статистика по Федеральным округам'
             hover_template = '<b>Количество пропускных пунктов</b>: %{y}<br>' + \
                              '<b>Федеральный округ</b>: %{x}<br>'
             fig.update_traces(hovertemplate=hover_template)
-            fig.update_yaxes(showspikes=True, spikemode='across')
+            fig.update_xaxes(showspikes=True, spikemode='across')
             fig.update_layout(margin=dict(t=20))
             st.plotly_chart(fig, theme="streamlit")
 
