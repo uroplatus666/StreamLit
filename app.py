@@ -1057,11 +1057,17 @@ if selected == 'Статистика по Федеральным округам'
         elif value == 'Классификация пропускных пунктов по статусу':
             st.write('')
             st.subheader('Классификация пропускных пунктов по статусу:label:', divider='blue')
-            fig = px.histogram(rosgran, y="Федеральный округ", color='Вид',
-                               facet_col='Классификация по статусу',height=600,width=900)
+            option = st.radio(
+                "**:blue[Выберите статус работы пропускных пунктов]**",
+                ['Многосторонний:heavy_check_mark:', 'Двусторонний:two:'])
+            if option == 'Многосторонний:heavy_check_mark:':
+                answer = 'многосторонний'
+            elif option == 'Двусторонний:two:':
+                answer = 'двусторонний'
+            fig = px.histogram(rosgran[rosgran['Классификация по статусу']==answer], y="Федеральный округ",
+                               color='Вид',height=600,width=900)
             fig.update_layout(legend=dict(title="<b>Вид пропускного пункта</b>"))
-            fig.update_yaxes(col=1,title_text='<b>Федеральный округ</b>')
-            fig.update_yaxes(col=2,title_text=None)
+            fig.update_yaxes(title_text='<b>Федеральный округ</b>')
             fig.update_xaxes(title_text='<b>Количество пропускных пунктов</b>')
             hover_template = '<b>Количество пропускных пунктов</b>: %{x}<br>' + \
                              '<b>Федеральный округ</b>: %{y}<br>'
@@ -1070,7 +1076,6 @@ if selected == 'Статистика по Федеральным округам'
             fig.update_xaxes(showspikes=True, spikemode='across')
             fig.update_layout(margin=dict(t=20))
             st.plotly_chart(fig, theme="streamlit")
-
 
 
 
