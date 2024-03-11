@@ -10,7 +10,7 @@ from streamlit_extras.let_it_rain import rain
 def load_model_1(model_name_1):
     rosgran=pd.read_csv(model_name_1)
     return (rosgran)
-rosgran = load_model_1('https://raw.githubusercontent.com/uroplatus666/Dash_StreamLit/master/rosgran.csv')
+rosgran = load_model_1('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/rosgran.csv')
 
 @st.cache_resource()
 def load_model_2(model_name_2):
@@ -71,13 +71,13 @@ country_else=load_model_9('https://raw.githubusercontent.com/uroplatus666/Dash_S
 def load_model_10(model_name_10):
     Center=pd.read_csv(model_name_10)
     return (Center)
-Center=load_model_10('https://raw.githubusercontent.com/uroplatus666/Dash_StreamLit/master/Center.csv')
+Center=load_model_10('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/Center.csv')
 
 @st.cache_resource()
 def load_model_11(model_name_11):
     ANN=pd.read_csv(model_name_11)
     return (ANN)
-ANN=load_model_11('https://raw.githubusercontent.com/uroplatus666/Dash_StreamLit/master/ANN.csv')
+ANN=load_model_11('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/ANN.csv')
 
 @st.cache_resource()
 def load_model_12(model_name_12):
