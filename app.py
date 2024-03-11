@@ -37,7 +37,7 @@ places_copy=load_model_4('https://raw.githubusercontent.com/uroplatus666/Dash_St
 def load_model_5(model_name_5):
     push=pd.read_csv(model_name_5)
     return (push)
-push=load_model_5('https://raw.githubusercontent.com/uroplatus666/Dash_StreamLit/master/push.csv')
+push=load_model_5('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/push.csv')
 
 
 @st.cache_resource()
