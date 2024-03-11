@@ -1249,8 +1249,8 @@ if selected == 'Статистика по участкам':
                        x="Количество (Факт/Паспорт)", y="Сопредельное государство",
                        facet_col='Год',
                        hover_name='Наименование пункта пропуска',
-                       facet_col_wrap=2,color="Вид",
-                       labels=dict(Вид='<b>Вид пропускного пункта</b>',value=''),height=1200,width=1000)
+                       facet_col_wrap=1,color="Вид",
+                       labels=dict(Вид='<b>Вид пропускного пункта</b>',value=''),height=1450,width=1000)
             fig.update_yaxes(col=1,title_text='<b>Сопредельное государство</b>')
             fig.update_yaxes(col=2,title_text=None)
             fig.update_xaxes(row=3, title_text=None)
