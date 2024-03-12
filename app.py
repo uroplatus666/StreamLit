@@ -999,7 +999,7 @@ if selected == 'Статистика по Федеральным округам'
             fig.update_layout(margin=dict(t=20))
             st.plotly_chart(fig, theme="streamlit")
             st.write()
-            question = st.checkbox('**:blue[Какой пункт считается перегруженным]:grey_question:	:question:**')
+            question = st.checkbox('**Какой пункт считается перегруженным:grey_question::question:**')
             if question:
                 st.write('**У каждого пункта пропуска есть максимальная пропускная способность, но есть пропускные пункты,
                 фактическое количество пересечений которых превышает максимально возморжное.
