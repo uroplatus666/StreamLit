@@ -109,17 +109,6 @@ selected = option_menu(
 
 
 if selected == 'Карты':
-    def example_map():
-        rain(
-            emoji="❄️",
-            font_size=10,
-            falling_speed=5,
-            animation_length="infinite",
-        )
-
-
-    example_map()
-    with st.container():
 
         st.subheader('***Потоки пропускных пунктов***',divider='blue')
         category = st.selectbox(
@@ -848,16 +837,7 @@ if selected == 'Карты':
             st.button("Перейти на следующую страницу", key='switch_button')
 
 if selected == 'Статистика по Федеральным округам':
-    def example_fo():
-        rain(
-            emoji="✈️",
-            font_size=14,
-            falling_speed=5,
-            animation_length="infinite",
-        )
 
-
-    example_fo()
     with st.container():
         value = st.selectbox(
             '***:gray[Выберите график]***',
@@ -1080,17 +1060,6 @@ if selected == 'Статистика по Федеральным округам'
 
 
 if selected == 'Статистика по участкам':
-    def example_places():
-        rain(
-            emoji="🐧",
-            font_size=17,
-            falling_speed=5,
-            animation_length="infinite",
-        )
-
-
-    example_places()
-
 
     with (((st.container()))):
         value = st.selectbox(
