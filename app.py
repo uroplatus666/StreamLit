@@ -110,7 +110,7 @@ selected = option_menu(
 
 if selected == 'Карты':
     with st.container():
-        st.subheader('***Потоки пропускных пунктов***',divider='blue')
+        st.subheader('***Количество пересечений государственной  границы России  через пограничные пункты пропуска***',divider='blue')
         category = st.selectbox(
             '**:gray[Выберите категорию, по которой хотите посмотреть потоки:]**',
             ('Число людей', 'Легковые транспортные средства',
@@ -898,7 +898,7 @@ if selected == 'Статистика по Федеральным округам'
             fig.update_layout(margin=dict(t=20))
             st.plotly_chart(fig, theme="streamlit")
 
-        elif value == 'Пропускные пункты с нулевым фактическим потоком':
+        elif value == 'Пропускные пункты с нулевым фактическим количеством пересечений':
             st.write('')
             st.subheader('Пропускные пункты с нулевым фактическим потоком:name_badge:')
             year = st.select_slider(
@@ -926,7 +926,7 @@ if selected == 'Статистика по Федеральным округам'
             st.plotly_chart(fig, theme="streamlit")
 
 
-        elif value == 'Сумма потоков пропускных пунктов':
+        elif value == 'Сумма пересечений пропускных пунктов':
             st.write('')
             st.subheader('Сумма потоков пропускных пунктов:bar_chart:', divider='blue')
             option = st.radio('**:blue[Выберите категорию, по которой хотите посмотреть потоки по пропускным пунктам]**',
@@ -948,7 +948,7 @@ if selected == 'Статистика по Федеральным округам'
             fig.update_layout(margin=dict(t=20))
             st.plotly_chart(fig, theme="streamlit")
 
-        elif value == 'Усредненные потоки пропускных пунктов':
+        elif value == 'Усредненное количество пересечений пропускных пунктов':
             st.write('')
             st.subheader('Усредненные потоки пропускных пунктов:chart_with_downwards_trend:', divider='blue')
             option = st.radio('**:blue[Выберите категорию, по которой хотите посмотреть потоки по пропускным пунктам]**',
@@ -1125,7 +1125,7 @@ if selected == 'Статистика по участкам':
             fig.update_layout(margin=dict(t=20))
             st.plotly_chart(fig, theme="streamlit")
 
-        elif value == 'Пропускные пункты с нулевым фактическим потоком':
+        elif value == 'Пропускные пункты с нулевым фактическим количеством пересечений':
             st.write('')
             st.subheader('Пропускные пункты с нулевым фактическим потоком:name_badge:')
             year = st.select_slider(
@@ -1155,7 +1155,7 @@ if selected == 'Статистика по участкам':
             st.plotly_chart(fig, theme="streamlit")
 
 
-        elif value == 'Сумма потоков пропускных пунктов':
+        elif value == 'Сумма пересечений пропускных пунктов':
             st.write('')
             st.subheader('Сумма потоков пропускных пунктов:bar_chart:', divider='blue')
             option = st.radio('**:blue[Выберите категорию, по которой хотите посмотреть потоки по пропускным пунктам]**',
@@ -1180,7 +1180,7 @@ if selected == 'Статистика по участкам':
             st.plotly_chart(fig, theme="streamlit")
 
 
-        elif value == 'Усредненные потоки пропускных пунктов':
+        elif value == 'Усредненное количество пересечений пропускных пунктов':
             st.write('')
             st.subheader('Усредненные потоки пропускных пунктов:chart_with_downwards_trend:', divider='blue')
             option = st.radio('**:blue[Выберите категорию, по которой хотите посмотреть потоки по пропускным пунктам]**',
