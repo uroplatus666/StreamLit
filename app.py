@@ -161,7 +161,7 @@ if selected == 'Карты':
                               "z-index": "10000"},
                     }
             ))
-        st.write('---')
+    st.write('---')
     with st.container():
 
         st.subheader('***Перегруженные пропускные пункты***',divider='red')
