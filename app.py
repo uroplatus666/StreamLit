@@ -109,7 +109,7 @@ selected = option_menu(
 
 
 if selected == 'Карты':
-
+    with st.container():
         st.subheader('***Потоки пропускных пунктов***',divider='blue')
         category = st.selectbox(
             '**:gray[Выберите категорию, по которой хотите посмотреть потоки:]**',
