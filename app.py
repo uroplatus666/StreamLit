@@ -940,8 +940,8 @@ if selected == 'Статистика по Федеральным округам'
             fig.update_yaxes(col=1,title_text='<b>Федеральный округ</b>')
             fig.update_yaxes(col=2,title_text=None)
             fig.update_xaxes(row=2,title_text=None)
-            fig.update_xaxes(row=1,title_text='<b>Сумма потоков</b>')
-            hover_template = '<b>Сумма потоков</b>: %{x}<br>' + \
+            fig.update_xaxes(row=1,title_text='<b>Сумма пересечений</b>')
+            hover_template = '<b>Сумма пересечений</b>: %{x}<br>' + \
                              '<b>Федеральный округ</b>: %{y}<br>'
             fig.update_traces(hovertemplate=hover_template)
             fig.update_xaxes(showspikes=True, spikemode='across')
@@ -964,8 +964,8 @@ if selected == 'Статистика по Федеральным округам'
             fig.update_yaxes(col=2,title_text=None)
             fig.update_xaxes(row=3,title_text=None)
             fig.update_xaxes(row=2,title_text=None)
-            fig.update_xaxes(row=1,title_text='<b>Усредненный поток</b>')
-            hover_template = '<b>Усредненный поток</b>: %{x}<br>' + \
+            fig.update_xaxes(row=1,title_text='<b>Усредненное количество пересечений</b>')
+            hover_template = '<b>Усредненное количество пересечений</b>: %{x}<br>' + \
                              '<b>Федеральный округ</b>: %{y}<br>'
             fig.update_traces(hovertemplate=hover_template)
             fig.update_xaxes(showspikes=True, spikemode='across')
@@ -1177,8 +1177,8 @@ if selected == 'Статистика по участкам':
             fig.update_yaxes(col=2,title_text=None)
             fig.update_xaxes(row=3,title_text=None)
             fig.update_xaxes(row=2,title_text=None)
-            fig.update_xaxes(row=1,title_text='<b>Сумма потоков</b>')
-            hover_template = '<b>Сумма потоков</b>: %{x}<br>' + \
+            fig.update_xaxes(row=1,title_text='<b>Сумма пересечений</b>')
+            hover_template = '<b>Сумма пересечений</b>: %{x}<br>' + \
                              '<b>Сопредельное государство</b>: %{y}<br>'
             fig.update_traces(hovertemplate=hover_template)
             fig.update_xaxes(showspikes=True, spikemode='across')
@@ -1202,8 +1202,8 @@ if selected == 'Статистика по участкам':
             fig.update_yaxes(col=2,title_text=None)
             fig.update_xaxes(row=3,title_text=None)
             fig.update_xaxes(row=2,title_text=None)
-            fig.update_xaxes(row=1,title_text='<b>Усредненный поток</b>')
-            hover_template = '<b>Усредненный поток</b>: %{x}<br>' + \
+            fig.update_xaxes(row=1,title_text='<b>Усредненное количество пересечений</b>')
+            hover_template = '<b>Усредненное количество пересечений</b>: %{x}<br>' + \
                              '<b>Сопредельное государство</b>: %{y}<br>'
             fig.update_traces(hovertemplate=hover_template)
             fig.update_xaxes(showspikes=True, spikemode='across')
