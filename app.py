@@ -232,8 +232,6 @@ if selected == 'Карты':
                     st.write('**Количество перегруженных пропускных пунктов: :red[6]**')
                 elif year==2022:
                     st.write('**Количество перегруженных пропускных пунктов: :red[9]**')
-
-
             st.pydeck_chart(pdk.Deck(
                 initial_view_state=pdk.ViewState(
                     latitude=55.7522,
