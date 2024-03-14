@@ -356,7 +356,6 @@ if selected == 'Карты':
             st.write('**Пропускных пунктов с :blue[не определенным] режимом работы :blue[16] штук**')
         elif type=='Временный':
             st.write('**Пропускных пунктов с :blue[временным] режимом работы :blue[13] штук**')
-        st.write('---')
         st.pydeck_chart(pdk.Deck(
             initial_view_state=pdk.ViewState(
                 latitude=55.7522,
