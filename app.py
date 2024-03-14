@@ -299,7 +299,6 @@ if selected == 'Карты':
                     st.markdown('''**:green[Функционирующие] :grey[пропускные пункты:] :green[30] :grey[единиц]**''')
                     st.markdown('''**:red[Не функционирующие] :grey[пропускные пункты:] :red[65] :grey[единиц]**''')
 
-            st.write('---')
             st.pydeck_chart(pdk.Deck(
                 initial_view_state=pdk.ViewState(
                     latitude=55.7522,
@@ -504,13 +503,12 @@ if selected == 'Карты':
 
     st.write('---')
     with st.container():
-        st.subheader('***Седневзвешенный центр распределения количества пересечений пропускных пунктов***', divider='blue')
+        st.subheader('***Средневзвешенный центр распределения количества пересечений пропускных пунктов***', divider='blue')
         category_ = st.selectbox(
             '**:gray[Выберите одну из категорий:]**',
             ('Число людей', 'Легковые транспортные средства',
              'Грузовые транспортные средства',
              'Паспорта транспортных средств', 'Грузы в тоннах'))
-        st.write('---')
         st.pydeck_chart(pdk.Deck(
             initial_view_state=pdk.ViewState(
                 latitude=51.95957752,
@@ -658,7 +656,6 @@ if selected == 'Карты':
         elif method=='Случайное':
             st.write('**У :blue[35] пропускны пунктов :blue[случайная] пространственная структура**')
 
-        st.write('---')
         st.pydeck_chart(pdk.Deck(
             initial_view_state=pdk.ViewState(
                 latitude=55.7522,
