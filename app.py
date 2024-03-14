@@ -269,7 +269,7 @@ if selected == 'Карты':
 
 
     with st.container():
-        st.subheader('***Пропускные пункты с нулевым фактическим потоком***',divider='green')
+        st.subheader('***Пропускные пункты с нулевым фактическим количеством пересечений***',divider='green')
 
         col1, col2 = st.columns([1, 7])
         with col1:
