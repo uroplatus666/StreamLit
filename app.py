@@ -16,21 +16,21 @@ rosgran = load_model_1('https://raw.githubusercontent.com/uroplatus666/StreamLit
 def load_model_2(model_name_2):
     all_df_copy=pd.read_csv(model_name_2)
     return (all_df_copy)
-all_df_copy=load_model_2('https://raw.githubusercontent.com/uroplatus666/Dash_StreamLit/master/all_df_copy.csv')
+all_df_copy=load_model_2('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/all_df_copy.csv')
 
 
 @st.cache_resource()
 def load_model_3(model_name_3):
     people_zero=pd.read_csv(model_name_3)
     return (people_zero)
-people_zero =load_model_3('https://raw.githubusercontent.com/uroplatus666/Dash_StreamLit/master/people_zero.csv')
+people_zero =load_model_3('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/people_zero.csv')
 
 
 @st.cache_resource()
 def load_model_4(model_name_4):
     places_copy=pd.read_csv(model_name_4)
     return (places_copy)
-places_copy=load_model_4('https://raw.githubusercontent.com/uroplatus666/Dash_StreamLit/master/places_copy.csv')
+places_copy=load_model_4('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/places_copy.csv')
 
 
 @st.cache_resource()
@@ -44,7 +44,7 @@ push=load_model_5('https://raw.githubusercontent.com/uroplatus666/StreamLit/mast
 def load_model_6(model_name_6):
     controls_else=pd.read_csv(model_name_6)
     return (controls_else)
-controls_else=load_model_6('https://raw.githubusercontent.com/uroplatus666/Dash_StreamLit/master/controls_else.csv')
+controls_else=load_model_6('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/controls_else.csv')
 
 
 @st.cache_resource()
@@ -58,14 +58,14 @@ places_count=load_model_7('https://raw.githubusercontent.com/uroplatus666/Stream
 def load_model_8(model_name_8):
     rosgran_count=pd.read_csv(model_name_8)
     return (rosgran_count)
-rosgran_count=load_model_8('https://raw.githubusercontent.com/uroplatus666/Dash_StreamLit/master/rosgran_count.csv')
+rosgran_count=load_model_8('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/rosgran_count.csv')
 
 
 @st.cache_resource()
 def load_model_9(model_name_9):
     country_else=pd.read_csv(model_name_9)
     return (country_else)
-country_else=load_model_9('https://raw.githubusercontent.com/uroplatus666/Dash_StreamLit/master/country_else.csv')
+country_else=load_model_9('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/country_else.csv')
 
 @st.cache_resource()
 def load_model_10(model_name_10):
@@ -83,7 +83,7 @@ ANN=load_model_11('https://raw.githubusercontent.com/uroplatus666/StreamLit/mast
 def load_model_12(model_name_12):
     all_df_copy_na=pd.read_csv(model_name_12)
     return (all_df_copy_na)
-all_df_copy_na=load_model_12('https://raw.githubusercontent.com/uroplatus666/Dash_StreamLit/master/all_df_copy_na.csv')
+all_df_copy_na=load_model_12('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/all_df_copy_na.csv')
 
 # 4. Manual item selection
 if st.session_state.get('switch_button', False):
