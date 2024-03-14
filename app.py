@@ -282,7 +282,6 @@ if selected == 'Карты':
         with col2:
             col1, col2 = st.columns([1, 2.1])
             with col2:
-                st.write('')
                 if year_2==2017:
                     st.markdown('''**:green[Функционирующие] :grey[пропускные пункты:] :green[19] :grey[единиц]**''')
                     st.markdown('''**:red[Не функционирующие] :grey[пропускные пункты:] :red[63] :grey[единицы]**''')
