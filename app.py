@@ -85,6 +85,12 @@ def load_model_12(model_name_12):
     return (all_df_copy_na)
 all_df_copy_na=load_model_12('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/all_df_copy_na.csv')
 
+@st.cache_resource()
+def load_model_2(model_name_13):
+    all_df_copy_places=pd.read_csv(model_name_13)
+    return (all_df_copy_places)
+all_df_copy_places=load_model_13('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/all_df_copy_places.csv')
+
 # 4. Manual item selection
 if st.session_state.get('switch_button', False):
     st.session_state['menu_option'] = (st.session_state.get('menu_option', 0) + 1)
@@ -1208,7 +1214,7 @@ if selected == 'Статистика по участкам':
                               ('Число людей', 'Легковые транспортные средства',
                                'Грузовые транспортные средства',
                                'Паспорта транспортных средств', 'Грузы в тоннах'))
-            fig=px.histogram(all_df_copy[all_df_copy['Категория']==option],
+            fig=px.histogram(all_df_copy_places[all_df_copy_places['Категория']==option],
                              x="Количество", y="Сопредельное государство",
                              facet_col='Год',
                              orientation='h',facet_col_wrap=2,color="Вид",
@@ -1233,7 +1239,7 @@ if selected == 'Статистика по участкам':
                               ('Число людей', 'Легковые транспортные средства',
                                'Грузовые транспортные средства',
                                'Паспорта транспортных средств', 'Грузы в тоннах'))
-            fig=px.histogram(all_df_copy[all_df_copy['Категория']==option], x="Количество",
+            fig=px.histogram(all_df_copy_places[all_df_copy_places['Категория']==option], x="Количество",
                              y="Сопредельное государство",
                              facet_col='Год',facet_col_wrap=2,
                              orientation='h', histfunc='avg',color="Вид",
@@ -1259,7 +1265,7 @@ if selected == 'Статистика по участкам':
                                'Грузовые транспортные средства',
                                'Паспорта транспортных средств',
                                'Грузы в тоннах'))
-            fig=px.bar(all_df_copy_na,
+            fig=px.bar(push,
                        x="Количество (Факт/Паспорт)", y="Сопредельное государство",
                        facet_col='Год',
                        hover_name='Наименование пункта пропуска',
