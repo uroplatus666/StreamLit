@@ -86,7 +86,7 @@ def load_model_12(model_name_12):
 all_df_copy_na=load_model_12('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/all_df_copy_na.csv')
 
 @st.cache_resource()
-def load_model_2(model_name_13):
+def load_model_13(model_name_13):
     all_df_copy_places=pd.read_csv(model_name_13)
     return (all_df_copy_places)
 all_df_copy_places=load_model_13('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/all_df_copy_places.csv')
