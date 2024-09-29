@@ -8,88 +8,88 @@ from streamlit_extras.let_it_rain import rain
 
 @st.cache_resource()
 def load_model_1(model_name_1):
-    rosgran=pd.read_csv(model_name_1)
+    rosgran = pd.read_csv(model_name_1)
     return (rosgran)
 rosgran = load_model_1('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/rosgran.csv')
 
 @st.cache_resource()
 def load_model_2(model_name_2):
-    all_df_copy=pd.read_csv(model_name_2)
+    all_df_copy = pd.read_csv(model_name_2)
     return (all_df_copy)
-all_df_copy=load_model_2('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/all_df_copy.csv')
+all_df_copy = load_model_2('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/all_df_copy.csv')
 
 
 @st.cache_resource()
 def load_model_3(model_name_3):
-    people_zero=pd.read_csv(model_name_3)
+    people_zero = pd.read_csv(model_name_3)
     return (people_zero)
-people_zero =load_model_3('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/people_zero.csv')
+people_zero = load_model_3('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/people_zero.csv')
 
 
 @st.cache_resource()
 def load_model_4(model_name_4):
-    places_copy=pd.read_csv(model_name_4)
+    places_copy = pd.read_csv(model_name_4)
     return (places_copy)
-places_copy=load_model_4('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/places_copy.csv')
+places_copy = load_model_4('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/places_copy.csv')
 
 
 @st.cache_resource()
 def load_model_5(model_name_5):
     push=pd.read_csv(model_name_5)
     return (push)
-push=load_model_5('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/push.csv')
+push = load_model_5('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/push.csv')
 
 
 @st.cache_resource()
 def load_model_6(model_name_6):
-    controls_else=pd.read_csv(model_name_6)
+    controls_else = pd.read_csv(model_name_6)
     return (controls_else)
-controls_else=load_model_6('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/controls_else.csv')
+controls_else = load_model_6('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/controls_else.csv')
 
 
 @st.cache_resource()
 def load_model_7(model_name_7):
-    places_count=pd.read_csv(model_name_7)
+    places_count = pd.read_csv(model_name_7)
     return (places_count)
-places_count=load_model_7('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/places_count.csv')
+places_count = load_model_7('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/places_count.csv')
 
 
 @st.cache_resource()
 def load_model_8(model_name_8):
-    rosgran_count=pd.read_csv(model_name_8)
+    rosgran_count = pd.read_csv(model_name_8)
     return (rosgran_count)
-rosgran_count=load_model_8('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/rosgran_count.csv')
+rosgran_count = load_model_8('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/rosgran_count.csv')
 
 
 @st.cache_resource()
 def load_model_9(model_name_9):
-    country_else=pd.read_csv(model_name_9)
+    country_else = pd.read_csv(model_name_9)
     return (country_else)
-country_else=load_model_9('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/country_else.csv')
+country_else = load_model_9('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/country_else.csv')
 
 @st.cache_resource()
 def load_model_10(model_name_10):
-    Center=pd.read_csv(model_name_10)
+    Center = pd.read_csv(model_name_10)
     return (Center)
-Center=load_model_10('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/Center.csv')
+Center = load_model_10('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/Center.csv')
 
 @st.cache_resource()
 def load_model_11(model_name_11):
-    ANN=pd.read_csv(model_name_11)
+    ANN = pd.read_csv(model_name_11)
     return (ANN)
-ANN=load_model_11('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/ANN.csv')
+ANN = load_model_11('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/ANN.csv')
 
 @st.cache_resource()
 def load_model_12(model_name_12):
-    all_df_copy_na=pd.read_csv(model_name_12)
+    all_df_copy_na = pd.read_csv(model_name_12)
     return (all_df_copy_na)
-all_df_copy_na=load_model_12('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/all_df_copy_na.csv')
+all_df_copy_na = load_model_12('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/all_df_copy_na.csv')
 
 @st.cache_resource()
 def load_model_13(model_name_13):
-    all_df_copy_places=pd.read_csv(model_name_13)
+    all_df_copy_places = pd.read_csv(model_name_13)
     return (all_df_copy_places)
-all_df_copy_places=load_model_13('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/all_df_copy_places.csv')
+all_df_copy_places = load_model_13('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/all_df_copy_places.csv')
 
 # 4. Manual item selection
 if st.session_state.get('switch_button', False):
@@ -101,15 +101,15 @@ else:
 
 
 selected = option_menu(
-    menu_title='Меню',
-    options=['Карты', 'Статистика по Федеральным округам',
+    menu_title = 'Меню',
+    options= ['Карты', 'Статистика по Федеральным округам',
              'Статистика по участкам'],
-    icons=['geo-alt','bar-chart','flag'],
-    menu_icon='tencent-qq',
+    icons = ['geo-alt','bar-chart','flag'],
+    menu_icon ='tencent-qq',
     default_index=0,
-    orientation='horizontal',
-    manual_select=manual_select,
-    key='menu',
+    orientation ='horizontal',
+    manual_select = manual_select,
+    key ='menu',
 )
 
 
@@ -123,16 +123,16 @@ if selected == 'Карты':
              'Грузовые транспортные средства',
              'Паспорта транспортных средств', 'Грузы в тоннах'))
 
-        if category=='Число людей':
-            elevation=0.13
-        elif category=='Легковые транспортные средства':
+        if category =='Число людей':
+            elevation = 0.13
+        elif category == 'Легковые транспортные средства':
             elevation=1.5
-        elif category=='Грузовые транспортные средства':
-            elevation=5
-        elif category=='Паспорта транспортных средств':
-            elevation=15
-        elif category=='Грузы в тоннах':
-            elevation=1.5
+        elif category == 'Грузовые транспортные средства':
+            elevation = 5
+        elif category == 'Паспорта транспортных средств':
+            elevation = 15
+        elif category == 'Грузы в тоннах':
+            elevation = 1.5
 
         col1, col2 = st.columns([7, 1])
 
@@ -143,21 +143,21 @@ if selected == 'Карты':
                 [2017, 2018, 2019, 2020, 2021, 2022])
         with col1:
             st.pydeck_chart(pdk.Deck(
-                initial_view_state=pdk.ViewState(
-                    latitude=55.7522,
-                    longitude=37.6156,
-                    zoom=2,
-                    pitch=50,
+                initial_view_state = pdk.ViewState(
+                    latitude = 55.7522,
+                    longitude = 37.6156,
+                    zoom = 2,
+                    pitch = 50,
                 ),
                 layers=[pdk.Layer('ColumnLayer',
-                                  data=all_df_copy[(all_df_copy['Категория'] == category) & (all_df_copy['Год'] == year)],
-                                  get_position='[longitude, latitude]',
-                                  radius=6000,
-                                  elevation_scale=elevation,
-                                  get_color='[31, 174, 233, 160]',
-                                  get_elevation='Количество',
-                                  pickable=True,
-                                  extruded=True,
+                                  data = all_df_copy[(all_df_copy['Категория'] == category) & (all_df_copy['Год'] == year)],
+                                  get_position = '[longitude, latitude]',
+                                  radius = 6000,
+                                  elevation_scale = elevation,
+                                  get_color = '[31, 174, 233, 160]',
+                                  get_elevation = 'Количество',
+                                  pickable = True,
+                                  extruded = True,
                                   ),
                         ],
 
@@ -171,10 +171,9 @@ if selected == 'Карты':
         st.write('Каждая колонка на карте – количество пересечений выбранной категории за выбранный год данного пропускного пункта. ' +\
                      'Размер колонки прямо пропорционален количеству пересечений.')
     st.write('---')
-    st.write('---')
     with st.container():
 
-        st.subheader('***Перегруженные пропускные пункты***', divider='red')
+        st.subheader('***Перегруженные пропускные пункты***', divider = 'red')
         categoryy = st.selectbox(
             '**:gray[Выберите интересующую категорию:]**',
             ('Число людей', 'Легковые транспортные средства',
@@ -255,21 +254,21 @@ if selected == 'Карты':
                 elif year == 2022:
                     st.write('**Количество перегруженных пропускных пунктов: :red[9]**')
             st.pydeck_chart(pdk.Deck(
-                initial_view_state=pdk.ViewState(
-                    latitude=55.7522,
-                    longitude=80.6156,
-                    zoom=1.5,
-                    pitch=50,
+                initial_view_state = pdk.ViewState(
+                    latitude = 55.7522,
+                    longitude = 80.6156,
+                    zoom = 1.5,
+                    pitch = 50,
                 ),
-                layers=[pdk.Layer('ColumnLayer',
-                                  data=all_df_copy_na[(all_df_copy_na['Категория'] == categoryy) & (all_df_copy_na['Год'] == year)],
-                                  get_position='[longitude, latitude]',
-                                  radius=20000,
-                                  elevation_scale=1000,
-                                  get_color='[205, 0, 0, 160]',
-                                  get_elevation=1000,
-                                  pickable=True,
-                                  extruded=True,
+                layers = [pdk.Layer('ColumnLayer',
+                                  data = all_df_copy_na[(all_df_copy_na['Категория'] == categoryy) & (all_df_copy_na['Год'] == year)],
+                                  get_position = '[longitude, latitude]',
+                                  radius = 20000,
+                                  elevation_scale = 1000,
+                                  get_color = '[205, 0, 0, 160]',
+                                  get_elevation = 1000,
+                                  pickable = True,
+                                  extruded = True,
                                   ),
                         ],
 
@@ -324,39 +323,39 @@ if selected == 'Карты':
                     st.markdown('''**:red[Не функционирующие] :grey[пропускные пункты:] :red[65] :grey[единиц]**''')
 
             st.pydeck_chart(pdk.Deck(
-                initial_view_state=pdk.ViewState(
-                    latitude=55.7522,
-                    longitude=80.6156,
-                    zoom=1.5,
-                    pitch=50,
+                initial_view_state = pdk.ViewState(
+                    latitude = 55.7522,
+                    longitude = 80.6156,
+                    zoom = 1.5,
+                    pitch = 50,
                 ),
                 layers=[pdk.Layer('ColumnLayer',
                                   data=places_copy[(places_copy['Категория'] == 'Число людей') &
                                                    (places_copy['Количество'] == 0) & (places_copy['Год'] == year_2)
                                                    & (places_copy['Функционирует/не функционирует'] == 'да')],
-                                  get_position='[longitude, latitude]',
-                                  radius_scale=900,
-                                  get_color='[0, 168, 107, 210]',
-                                  pickable=True,
-                                  elevation=100000,
-                                  elevation_scale=600,
-                                  radius=10000,
+                                  get_position = '[longitude, latitude]',
+                                  radius_scale = 900,
+                                  get_color = '[0, 168, 107, 210]',
+                                  pickable = True,
+                                  elevation = 100000,
+                                  elevation_scale = 600,
+                                  radius = 10000,
                                   ),
                         pdk.Layer('ColumnLayer',
                                   data=places_copy[(places_copy['Категория'] == 'Число людей') &
                                                    (places_copy['Количество'] == 0) & (places_copy['Год'] == year_2)
                                                    & (places_copy['Функционирует/не функционирует'] == 'нет')],
-                                  get_position='[longitude, latitude]',
-                                  radius_scale=900,
-                                  get_color='[204, 6, 5, 210]',
-                                  pickable=True,
-                                  elevation=100000,
-                                  elevation_scale=600,
-                                  radius=10000,
+                                  get_position = '[longitude, latitude]',
+                                  radius_scale = 900,
+                                  get_color = '[204, 6, 5, 210]',
+                                  pickable = True,
+                                  elevation = 100000,
+                                  elevation_scale = 600,
+                                  radius = 10000,
                                   ),
                         ],
 
-                    tooltip={
+                    tooltip = {
                         "html": '<b>{Вид}</b> <b>{Наименование пункта пропуска}</b>',
                         "style": {"background": "grey", "color": "white", "font-family": '"Helvetica Neue", Arial',
                                   "z-index": "10000"},
@@ -368,155 +367,155 @@ if selected == 'Карты':
                      'Размер колонок одинаковый, цвет функционирующих пропускных пунктов - :green[зеленый], не функционирующих - :red[красный].')
     st.write('---')
     with st.container():
-        st.subheader('***Классификация пропускных пунктов по режиму работы***', divider='blue')
+        st.subheader('***Классификация пропускных пунктов по режиму работы***', divider = 'blue')
         type = st.selectbox(
             '**:gray[Выберите режим работы пропускных пунктов:]**',
             ('Постоянный', 'Работающий на нерегулярной основе','Сезонный','Не определен','Временный'))
-        if type=='Постоянный':
+        if type == 'Постоянный':
             st.write('**Пропускных пунктов с :blue[постоянным] режимом работы :blue[298] штук**')
-        elif type=='Работающий на нерегулярной основе':
+        elif type == 'Работающий на нерегулярной основе':
             st.write('**Пропускных пунктов с :blue[нерегулярным] режимом работы :blue[37] штук**')
-        elif type=='Сезонный':
+        elif type == 'Сезонный':
             st.write('**Пропускных пунктов с :blue[сезонным] режимом работы :blue[16] штук**')
-        elif type=='Не определен':
+        elif type == 'Не определен':
             st.write('**Пропускных пунктов с :blue[не определенным] режимом работы :blue[16] штук**')
-        elif type=='Временный':
+        elif type == 'Временный':
             st.write('**Пропускных пунктов с :blue[временным] режимом работы :blue[13] штук**')
         st.pydeck_chart(pdk.Deck(
-            initial_view_state=pdk.ViewState(
-                latitude=55.7522,
-                longitude=100.6156,
-                zoom=1.5,
-                pitch=50,
+            initial_view_state = pdk.ViewState(
+                latitude = 55.7522,
+                longitude = 100.6156,
+                zoom = 1.5,
+                pitch = 50,
             ),
 
-            layers=[pdk.Layer('ColumnLayer',
-                              data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type))&
-                                       ((rosgran['Сопредельное государство']=='Китайская Народная Республика')|
-                                        (rosgran['Сопредельное государство']=='Финляндская Республика'))],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[72, 118, 255],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[72, 118, 255],
-                              opacity=0.8
+            layers = [pdk.Layer('ColumnLayer',
+                              data = rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type))&
+                                       ((rosgran['Сопредельное государство'] == 'Китайская Народная Республика')|
+                                        (rosgran['Сопредельное государство'] == 'Финляндская Республика'))],
+                              get_position = '[longitude,latitude]',
+                              radius_scale = 9000,
+                              radius = 10000,
+                              elevation = 100000,
+                              elevation_scale = 225,
+                              get_color = [72, 118, 255],
+                              pickable = True,
+                              stroked = True,
+                              filled = True,
+                              get_fill_color = [72, 118, 255],
+                              opacity = 0.8
                               ),
                     pdk.Layer('ColumnLayer',
-                              data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
+                              data = rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
                                        ((rosgran['Сопредельное государство'] == 'Республика Казахстан') |
                                         (rosgran['Сопредельное государство'] == 'Эстонская Республика'))],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[131, 111, 255],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[131, 111, 255],
-                              opacity=0.8
+                              get_position = '[longitude,latitude]',
+                              radius_scale = 9000,
+                              radius = 10000,
+                              elevation = 100000,
+                              elevation_scale = 225,
+                              get_color = [131, 111, 255],
+                              pickable = True,
+                              stroked = True,
+                              filled = True,
+                              get_fill_color = [131, 111, 255],
+                              opacity = 0.8
                               ),
                     pdk.Layer('ColumnLayer',
-                              data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
+                              data = rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
                                        ((rosgran['Сопредельное государство'] == 'Монголия') |
                                         (rosgran['Сопредельное государство'] == 'Латвийская Республика'))],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[240, 255, 255],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[240, 255, 255],
-                              opacity=0.8
+                              get_position = '[longitude,latitude]',
+                              radius_scale = 9000,
+                              radius = 10000,
+                              elevation = 100000,
+                              elevation_scale = 225,
+                              get_color = [240, 255, 255],
+                              pickable = True,
+                              stroked = True,
+                              filled = True,
+                              get_fill_color = [240, 255, 255],
+                              opacity = 0.8
                               ),
                     pdk.Layer('ColumnLayer',
-                              data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
+                              data = rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
                                        ((rosgran['Сопредельное государство'] == 'Республика Грузия') |
                                         (rosgran['Сопредельное государство'] == 'Королевство Норвегия'))],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[0, 0, 255],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[0, 0, 255],
-                              opacity=0.8
+                              get_position = '[longitude,latitude]',
+                              radius_scale = 9000,
+                              radius = 10000,
+                              elevation = 100000,
+                              elevation_scale = 225,
+                              get_color = [0, 0, 255],
+                              pickable = True,
+                              stroked = True,
+                              filled = True,
+                              get_fill_color = [0, 0, 255],
+                              opacity = 0.8
                               ),
                     pdk.Layer('ColumnLayer',
-                              data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
+                              data = rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
                                        ((rosgran['Сопредельное государство'] == 'Украина') |
                                         (rosgran['Сопредельное государство'] == 'утратило значение (Украина)'))],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[0, 245, 255],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[0, 245, 255],
-                              opacity=0.8
+                              get_position = '[longitude,latitude]',
+                              radius_scale = 9000,
+                              radius = 10000,
+                              elevation = 100000,
+                              elevation_scale = 225,
+                              get_color = [0, 245, 255],
+                              pickable = True,
+                              stroked = True,
+                              filled = True,
+                              get_fill_color = [0, 245, 255],
+                              opacity = 0.8
                               ),
                     pdk.Layer('ColumnLayer',
                               data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
                                        ((rosgran['Сопредельное государство'] == 'Корейская Народно-Демократическая Республика') |
                                         (rosgran['Сопредельное государство'] == 'Республика Южная Осетия')|
                                         (rosgran['Сопредельное государство'] == 'Литовская Республика'))],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[127, 255, 212],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[127, 255, 212],
-                              opacity=0.8
+                              get_position = '[longitude,latitude]',
+                              radius_scale = 9000,
+                              radius = 10000,
+                              elevation = 100000,
+                              elevation_scale = 225,
+                              get_color = [127, 255, 212],
+                              pickable = True,
+                              stroked = True,
+                              filled = True,
+                              get_fill_color = [127, 255, 212],
+                              opacity = 0.8
                               ),
                     pdk.Layer('ColumnLayer',
                               data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
                                        ((rosgran['Сопредельное государство'] == 'Республика Польша') |
                                         (rosgran['Сопредельное государство'] == 'Азербайджанская Республика'))],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[164, 211, 238],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[164, 211, 238],
-                              opacity=0.8
+                              get_position = '[longitude,latitude]',
+                              radius_scale = 9000,
+                              radius = 10000,
+                              elevation = 100000,
+                              elevation_scale = 225,
+                              get_color = [164, 211, 238],
+                              pickable = True,
+                              stroked = True,
+                              filled = True,
+                              get_fill_color = [164, 211, 238],
+                              opacity = 0.8
                               ),
                     pdk.Layer('ColumnLayer',
                               data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
                                            (rosgran['Сосед'] == 'нет')],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[255, 48, 48],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[255, 48, 48],
-                              opacity=0.8
+                              get_position = '[longitude,latitude]',
+                              radius_scale = 9000,
+                              radius = 10000,
+                              elevation = 100000,
+                              elevation_scale = 225,
+                              get_color = [255, 48, 48],
+                              pickable = True,
+                              stroked = True,
+                              filled = True,
+                              get_fill_color = [255, 48, 48],
+                              opacity = 0.8
                               ),
                     ],
 
@@ -549,12 +548,12 @@ if selected == 'Карты':
             ),
 
             layers=[pdk.Layer('ColumnLayer',
-                                data=Center[(Center['Категория'] == category_) &
+                                data = Center[(Center['Категория'] == category_) &
                                                 (Center['Год'] == '2017 год')],
-                                get_position='[longitude,latitude]',
-                                radius_scale=9000,
-                                radius=10000,
-                                elevation=100000,
+                                get_position = '[longitude,latitude]',
+                                radius_scale = 9000,
+                                radius = 10000,
+                                elevation = 100000,
                                 elevation_scale=75,
                                 get_color='[0, 168, 107, 210]',
                                 pickable=True,
@@ -1242,48 +1241,48 @@ if selected == 'Статистика по участкам':
             fig=px.histogram(all_df_copy_places[all_df_copy_places['Категория']==option], x="Количество",
                              y="Сопредельное государство",
                              facet_col='Год',facet_col_wrap=2,
-                             orientation='h', histfunc='avg',color="Вид",
-                             labels=dict(Вид='<b>Вид пропускного пункта</b>', value=''),height=1450,width=1000)
+                             orientation = 'h', histfunc='avg',color="Вид",
+                             labels = dict(Вид='<b>Вид пропускного пункта</b>', value=''),height=1450,width=1000)
             fig.update_yaxes(col=1,title_text='<b>Сопредельное государство</b>')
-            fig.update_yaxes(col=2,title_text=None)
-            fig.update_xaxes(row=3,title_text=None)
-            fig.update_xaxes(row=2,title_text=None)
-            fig.update_xaxes(row=1,title_text='<b>Усредненное количество пересечений</b>')
+            fig.update_yaxes(col = 2,title_text = None)
+            fig.update_xaxes(row = 3,title_text = None)
+            fig.update_xaxes(row = 2,title_text = None)
+            fig.update_xaxes(row = 1,title_tex = '<b>Усредненное количество пересечений</b>')
             hover_template = '<b>Усредненное количество пересечений</b>: %{x}<br>' + \
                              '<b>Сопредельное государство</b>: %{y}<br>'
-            fig.update_traces(hovertemplate=hover_template)
-            fig.update_xaxes(showspikes=True, spikemode='across')
-            fig.update_layout(margin=dict(t=20))
-            st.plotly_chart(fig, theme="streamlit")
+            fig.update_traces(hovertemplate = hover_template)
+            fig.update_xaxes(showspikes = True, spikemode = 'across')
+            fig.update_layout(margin = dict(t=20))
+            st.plotly_chart(fig, theme = "streamlit")
 
 
         elif value == 'Перегруженные пункты пропуска':
             st.write('')
-            st.subheader('Перегруженные пункты пропуска:warning:', divider='blue')
+            st.subheader('Перегруженные пункты пропуска:warning:', divider = 'blue')
             option = st.radio('**:blue[Выберите категорию:]**',
                               ('Число людей', 'Легковые транспортные средства',
                                'Грузовые транспортные средства',
                                'Паспорта транспортных средств',
                                'Грузы в тоннах'))
-            fig=px.bar(push[push['Категория']==option],
-                       x="Количество (Факт/Паспорт)", y="Сопредельное государство",
-                       facet_col='Год',
-                       hover_name='Наименование пункта пропуска',
-                       facet_col_wrap=1,color="Вид",
-                       labels=dict(Вид='<b>Вид пропускного пункта</b>',value=''),height=1450,width=1000)
-            fig.update_yaxes(col=1,title_text='<b>Сопредельное государство</b>')
-            fig.update_yaxes(col=2,title_text=None)
-            fig.update_xaxes(row=3, title_text=None)
-            fig.update_xaxes(row=2, title_text=None)
-            fig.update_xaxes(row=1, title_text='<b>Отношение фактического потока к паспортному</b>')
+            fig = px.bar(push[push['Категория']==option],
+                       x = "Количество (Факт/Паспорт)", y = "Сопредельное государство",
+                       facet_col = 'Год',
+                       hover_name = 'Наименование пункта пропуска',
+                       facet_col_wrap = 1,color  ="Вид",
+                       labels = dict(Вид = '<b>Вид пропускного пункта</b>',value = ''),height = 1450,width = 1000)
+            fig.update_yaxes(col = 1,title_text='<b>Сопредельное государство</b>')
+            fig.update_yaxes(col = 2,title_text=None)
+            fig.update_xaxes(row = 3, title_text=None)
+            fig.update_xaxes(row = 2, title_text=None)
+            fig.update_xaxes(row = 1, title_text='<b>Отношение фактического потока к паспортному</b>')
             hover_template = '<b>Наименование пункта пропуска</b>: %{hovertext}<br>' + \
                              '<b>Отношение фактического потока к паспортному</b>: %{x}<br>' + \
                              '<b>Сопредельное государство</b>: %{y}'
 
-            fig.update_traces(hovertemplate=hover_template)
-            fig.update_xaxes(showspikes=True, spikemode='across')
-            fig.update_layout(margin=dict(t=20))
-            st.plotly_chart(fig, theme="streamlit")
+            fig.update_traces(hovertemplate = hover_template)
+            fig.update_xaxes(showspikes = True, spikemode = 'across')
+            fig.update_layout(margin = dict(t=20))
+            st.plotly_chart(fig, theme = "streamlit")
             st.write()
             question = st.checkbox('**:red[Какой пункт считается перегруженным]:grey_question:**')
             if question:
@@ -1299,36 +1298,36 @@ if selected == 'Статистика по участкам':
                                   ('Таможенный', 'Пограничный',
                                    'Транспортный','Санитарно-карантинный',
                                    'Карантинный фитосанитарный', 'Ветеринарный'))
-            fig = go.Figure(data=go.Heatmap(z=country_else[country_else['Тип контроля']==option]['Процент контроля'],
-                                            x=country_else[country_else['Тип контроля']==option]['Вид'],
-                                            y=country_else[country_else['Тип контроля']==option]['Сопредельное государство'],
-                                            colorscale='RdBu',
-                                            colorbar=dict(title='<b>Процент контроля</b>'),
-                                            text=country_else[country_else['Тип контроля']==option]['Процент контроля'],
-                                            customdata=country_else[country_else['Тип контроля']==option][['Сопредельное государство',
+            fig = go.Figure(data = go.Heatmap(z = country_else[country_else['Тип контроля'] == option]['Процент контроля'],
+                                            x = country_else[country_else['Тип контроля'] == option]['Вид'],
+                                            y = country_else[country_else['Тип контроля'] == option]['Сопредельное государство'],
+                                            colorscale = 'RdBu',
+                                            colorbar = dict(title = '<b>Процент контроля</b>'),
+                                            text=country_else[country_else['Тип контроля'] == option]['Процент контроля'],
+                                            customdata=country_else[country_else['Тип контроля'] == option][['Сопредельное государство',
                                                                                                              'Вид', 'Процент контроля']])
                             )
 
-            fig.update_xaxes(title_text="<b>Вид пропускного пункта</b>")
-            fig.update_yaxes(title_text='<b>Сопредельное государство</b>')
+            fig.update_xaxes(title_text = "<b>Вид пропускного пункта</b>")
+            fig.update_yaxes(title_text = '<b>Сопредельное государство</b>')
 
             hover_template = '<b>Сопредельное государство</b>: %{customdata[0]}<br>' + \
                              '<b>Вид пропускного пункта</b>: %{customdata[1]}<br>' + \
                              '<b>Процент контроля</b>: %{customdata[2]}%<extra></extra>'
 
-            fig.update_traces(hovertemplate=hover_template, hoverongaps=False)
+            fig.update_traces(hovertemplate=hover_template, hoverongaps = False)
             fig.update_layout(
-                width=1000,  # Ширина графика
-                height=700,  # Высота графика
-                margin=dict(l=50, r=50, t=20, b=50),  # Отступы слева, справа, сверху и снизу
+                width = 1000,  # Ширина графика
+                height = 700,  # Высота графика
+                margin = dict(l=50, r=50, t=20, b=50),  # Отступы слева, справа, сверху и снизу
             )
 
-            st.plotly_chart(fig, theme="streamlit")
+            st.plotly_chart(fig, theme = "streamlit")
 
 
         elif value == 'Классификация пропускных пунктов по статусу':
             st.write('')
-            st.subheader('Классификация пропускных пунктов по статусу:label:', divider='blue')
+            st.subheader('Классификация пропускных пунктов по статусу:label:', divider = 'blue')
             option = st.radio(
                 "**:blue[Выберите статус работы пропускных пунктов]**",
                 ['Многосторонний:heavy_check_mark:', 'Двусторонний:two:'])
@@ -1336,22 +1335,22 @@ if selected == 'Статистика по участкам':
                 answer = 'многосторонний'
             elif option == 'Двусторонний:two:':
                 answer = 'двусторонний'
-            places=rosgran[(rosgran['Сопредельное государство']!='не применимо')&
-                           (rosgran['Сопредельное государство']!='не применимо (ДНР)')&
-                           (rosgran['Сопредельное государство']!='не применимо (ЛНР)')&
-                           (rosgran['Сопредельное государство']!='не применимо (Херсонская обл.)')]
-            fig = px.histogram(places[places['Классификация по статусу']==answer], y="Сопредельное государство",
+            places=rosgran[(rosgran['Сопредельное государство'] != 'не применимо')&
+                           (rosgran['Сопредельное государство'] != 'не применимо (ДНР)')&
+                           (rosgran['Сопредельное государство'] != 'не применимо (ЛНР)')&
+                           (rosgran['Сопредельное государство'] != 'не применимо (Херсонская обл.)')]
+            fig = px.histogram(places[places['Классификация по статусу'] == answer], y = "Сопредельное государство",
                                color='Вид', height=800,width=1000)
-            fig.update_layout(legend=dict(title="<b>Вид пропускного пункта</b>"))
-            fig.update_xaxes(title_text='<b>Количество пропускных пунктов</b>')
-            fig.update_yaxes(title_text='<b>Сопредельное государство</b>')
+            fig.update_layout(legend = dict(title = "<b>Вид пропускного пункта</b>"))
+            fig.update_xaxes(title_text = '<b>Количество пропускных пунктов</b>')
+            fig.update_yaxes(title_text = '<b>Сопредельное государство</b>')
             hover_template = '<b>Количество пропускных пунктов</b>: %{x}<br>' + \
                              '<b>Сопредельное государство</b>: %{y}<br>'
 
-            fig.update_traces(hovertemplate=hover_template)
-            fig.update_xaxes(showspikes=True, spikemode='across')
-            fig.update_layout(margin=dict(t=20))
-            st.plotly_chart(fig, theme="streamlit")
+            fig.update_traces(hovertemplate = hover_template)
+            fig.update_xaxes(showspikes = True, spikemode='across')
+            fig.update_layout(margin = dict(t=20))
+            st.plotly_chart(fig, theme = "streamlit")
 
 
 
