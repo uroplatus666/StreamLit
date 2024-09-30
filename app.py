@@ -1279,7 +1279,7 @@ if selected == 'Статистика по участкам':
             fig.update_yaxes(col=2, title_text=None)
             fig.update_xaxes(row=3, title_text=None)
             fig.update_xaxes(row=2, title_text=None)
-            fig.update_xaxes(row=1, title_tex='<b>Усредненное количество пересечений</b>')
+            fig.update_xaxes(row=1, title_text='<b>Усредненное количество пересечений</b>')
             hover_template = '<b>Усредненное количество пересечений</b>: %{x}<br>' + \
                              '<b>Сопредельное государство</b>: %{y}<br>'
             fig.update_traces(hovertemplate=hover_template)
