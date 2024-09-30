@@ -331,7 +331,7 @@ if selected == 'Карты':
                 "**:green[Выберите год]**",
                 [2017, 2018, 2019, 2020, 2021, 2022])
         with col2:
-            col1, col2 = st.columns([1, 0.5])
+            col1, col2 = st.columns([1, 0.52])
             with col2:
                 if year_2 == 2017:
                     st.markdown('''**:green[Функционирующие] :grey[пропускные пункты:] :green[19] :grey[единиц]**''')
