@@ -284,32 +284,32 @@ if selected == 'Карты':
                     st.write('**Количество перегруженных пропускных пунктов: :red[6]**')
                 elif year == 2022:
                     st.write('**Количество перегруженных пропускных пунктов: :red[9]**')
-                st.pydeck_chart(pdk.Deck(
-                    initial_view_state=pdk.ViewState(
-                        latitude=55.7522,
-                        longitude=80.6156,
-                        zoom=1.5,
-                        pitch=50,
-                    ),
-                    layers=[pdk.Layer('ColumnLayer',
-                                      data=all_df_copy_na[
-                                          (all_df_copy_na['Категория'] == categoryy) & (all_df_copy_na['Год'] == year)],
-                                      get_position='[longitude, latitude]',
-                                      radius=20000,
-                                      elevation_scale=1000,
-                                      get_color='[205, 0, 0, 160]',
-                                      get_elevation=1000,
-                                      pickable=True,
-                                      extruded=True,
-                                      ),
-                            ],
-    
-                    tooltip={
-                        "html": "<b>{Вид}</b> <b>{Наименование пункта пропуска}</b>, максимально допустимое количество пересечений превышено в <b>{Количество (Факт/Паспорт)}</b> раз(а)",
-                        "style": {"background": "grey", "color": "white", "font-family": '"Helvetica Neue", Arial',
-                                  "z-index": "10000"},
-                    }
-                ))
+            st.pydeck_chart(pdk.Deck(
+                initial_view_state=pdk.ViewState(
+                    latitude=55.7522,
+                    longitude=80.6156,
+                    zoom=1.5,
+                    pitch=50,
+                ),
+                layers=[pdk.Layer('ColumnLayer',
+                                  data=all_df_copy_na[
+                                      (all_df_copy_na['Категория'] == categoryy) & (all_df_copy_na['Год'] == year)],
+                                  get_position='[longitude, latitude]',
+                                  radius=20000,
+                                  elevation_scale=1000,
+                                  get_color='[205, 0, 0, 160]',
+                                  get_elevation=1000,
+                                  pickable=True,
+                                  extruded=True,
+                                  ),
+                        ],
+
+                tooltip={
+                    "html": "<b>{Вид}</b> <b>{Наименование пункта пропуска}</b>, максимально допустимое количество пересечений превышено в <b>{Количество (Факт/Паспорт)}</b> раз(а)",
+                    "style": {"background": "grey", "color": "white", "font-family": '"Helvetica Neue", Arial',
+                              "z-index": "10000"},
+                }
+            ))
             st.write('**:grey[Описание]	:thinking_face:**')
             st.write('Каждая колонка на карте – перегруженный пропускной пункт. ' + \
                      'Размер колонок одинаковый.')
@@ -331,26 +331,24 @@ if selected == 'Карты':
                 "**:green[Выберите год]**",
                 [2017, 2018, 2019, 2020, 2021, 2022])
         with col1:
-            col1, col2 = st.columns([1, 0.9])
-            with col2:
-                if year_2 == 2017:
-                    st.markdown('''**:green[Функционирующие] :grey[пропускные пункты:] :green[19] :grey[единиц]**''')
-                    st.markdown('''**:red[Не функционирующие] :grey[пропускные пункты:] :red[63] :grey[единицы]**''')
-                elif year_2 == 2018:
-                    st.markdown('''**:green[Функционирующие] :grey[пропускные пункты:] :green[24] :grey[единицы]**''')
-                    st.markdown('''**:red[Не функционирующие] :grey[пропускные пункты:] :red[62] :grey[единицы]**''')
-                elif year_2 == 2019:
-                    st.markdown('''**:green[Функционирующие] :grey[пропускные пункты:] :green[20] :grey[единиц]**''')
-                    st.markdown('''**:red[Не функционирующие] :grey[пропускные пункты:] :red[63] :grey[единицы]**''')
-                elif year_2 == 2020:
-                    st.markdown('''**:green[Функционирующие] :grey[пропускные пункты:] :green[24] :grey[единицы]**''')
-                    st.markdown('''**:red[Не функционирующие] :grey[пропускные пункты:] :red[65] :grey[единиц]**''')
-                elif year_2 == 2021:
-                    st.markdown('''**:green[Функционирующие] :grey[пропускные пункты:] :green[62] :grey[единицы]**''')
-                    st.markdown('''**:red[Не функционирующие] :grey[пропускные пункты:] :red[66] :grey[единиц]**''')
-                elif year_2 == 2022:
-                    st.markdown('''**:green[Функционирующие] :grey[пропускные пункты:] :green[30] :grey[единиц]**''')
-                    st.markdown('''**:red[Не функционирующие] :grey[пропускные пункты:] :red[65] :grey[единиц]**''')
+            if year_2 == 2017:
+                st.markdown('''**:green[Функционирующие] :grey[пропускные пункты:] :green[19] :grey[единиц]**''')
+                st.markdown('''**:red[Не функционирующие] :grey[пропускные пункты:] :red[63] :grey[единицы]**''')
+            elif year_2 == 2018:
+                st.markdown('''**:green[Функционирующие] :grey[пропускные пункты:] :green[24] :grey[единицы]**''')
+                st.markdown('''**:red[Не функционирующие] :grey[пропускные пункты:] :red[62] :grey[единицы]**''')
+            elif year_2 == 2019:
+                st.markdown('''**:green[Функционирующие] :grey[пропускные пункты:] :green[20] :grey[единиц]**''')
+                st.markdown('''**:red[Не функционирующие] :grey[пропускные пункты:] :red[63] :grey[единицы]**''')
+            elif year_2 == 2020:
+                st.markdown('''**:green[Функционирующие] :grey[пропускные пункты:] :green[24] :grey[единицы]**''')
+                st.markdown('''**:red[Не функционирующие] :grey[пропускные пункты:] :red[65] :grey[единиц]**''')
+            elif year_2 == 2021:
+                st.markdown('''**:green[Функционирующие] :grey[пропускные пункты:] :green[62] :grey[единицы]**''')
+                st.markdown('''**:red[Не функционирующие] :grey[пропускные пункты:] :red[66] :grey[единиц]**''')
+            elif year_2 == 2022:
+                st.markdown('''**:green[Функционирующие] :grey[пропускные пункты:] :green[30] :grey[единиц]**''')
+                st.markdown('''**:red[Не функционирующие] :grey[пропускные пункты:] :red[65] :grey[единиц]**''')
 
             st.pydeck_chart(pdk.Deck(
                 initial_view_state=pdk.ViewState(
