@@ -13,7 +13,7 @@ def load_model_1(model_name_1):
     return (rosgran)
 
 
-rosgran = load_model_1('https://raw.githubusercontent.com/uroplatus666/StreamLit/master/data/rosgran.csv')
+rosgran = load_model_1('data/rosgran.csv')
 
 
 @st.cache_resource()
@@ -22,7 +22,7 @@ def load_model_2(model_name_2):
     return (all_df_copy)
 
 
-all_df_copy = load_model_2('https://raw.githubusercontent.com/uroplatus666/refs/heads/StreamLit/master/data/all_df_copy.csv')
+all_df_copy = load_model_2('data/all_df_copy.csv')
 
 @st.cache_resource()
 def load_model_3(model_name_3):
@@ -30,7 +30,7 @@ def load_model_3(model_name_3):
     return (people_zero)
 
 
-people_zero = load_model_3('https://raw.githubusercontent.com/uroplatus666/StreamLit/refs/heads/master/data/people_zero.csv')
+people_zero = load_model_3('data/people_zero.csv')
 
 
 @st.cache_resource()
@@ -39,7 +39,7 @@ def load_model_4(model_name_4):
     return (places_copy)
 
 
-places_copy = load_model_4('https://raw.githubusercontent.com/uroplatus666/StreamLit/refs/heads/master/data/places_copy.csv')
+places_copy = load_model_4('data/places_copy.csv')
 
 
 @st.cache_resource()
@@ -48,7 +48,7 @@ def load_model_5(model_name_5):
     return (push)
 
 
-push = load_model_5('https://raw.githubusercontent.com/uroplatus666/StreamLit/refs/heads/master/data/push.csv')
+push = load_model_5('data/push.csv')
 
 
 @st.cache_resource()
@@ -57,7 +57,7 @@ def load_model_6(model_name_6):
     return (controls_else)
 
 
-controls_else = load_model_6('https://raw.githubusercontent.com/uroplatus666/StreamLit/refs/heads/master/data/controls_else.csv')
+controls_else = load_model_6('data/controls_else.csv')
 
 
 @st.cache_resource()
@@ -66,7 +66,7 @@ def load_model_7(model_name_7):
     return (places_count)
 
 
-places_count = load_model_7('https://raw.githubusercontent.com/uroplatus666/StreamLit/refs/heads/master/data/places_count.csv')
+places_count = load_model_7('data/places_count.csv')
 
 
 @st.cache_resource()
@@ -75,7 +75,7 @@ def load_model_8(model_name_8):
     return (rosgran_count)
 
 
-rosgran_count = load_model_8('https://raw.githubusercontent.com/uroplatus666/StreamLit/refs/heads/master/data/rosgran_count.csv')
+rosgran_count = load_model_8('data/rosgran_count.csv')
 
 
 @st.cache_resource()
@@ -84,7 +84,7 @@ def load_model_9(model_name_9):
     return (country_else)
 
 
-country_else = load_model_9('https://raw.githubusercontent.com/uroplatus666/StreamLit/refs/heads/master/data/country_else.csv')
+country_else = load_model_9('data/country_else.csv')
 
 
 @st.cache_resource()
@@ -93,7 +93,7 @@ def load_model_10(model_name_10):
     return (Center)
 
 
-Center = load_model_10('https://raw.githubusercontent.com/uroplatus666/StreamLit/refs/heads/master/data/Center.csv')
+Center = load_model_10('data/Center.csv')
 
 
 @st.cache_resource()
@@ -102,7 +102,7 @@ def load_model_11(model_name_11):
     return (ANN)
 
 
-ANN = load_model_11('https://raw.githubusercontent.com/uroplatus666/StreamLit/refs/heads/master/data/ANN.csv')
+ANN = load_model_11('data/ANN.csv')
 
 
 @st.cache_resource()
@@ -111,8 +111,7 @@ def load_model_12(model_name_12):
     return (all_df_copy_na)
 
 
-all_df_copy_na = load_model_12(
-    'https://raw.githubusercontent.com/uroplatus666/StreamLit/refs/heads/master/data/all_df_copy_na.csv')
+all_df_copy_na = load_model_12('data/all_df_copy_na.csv')
 
 
 @st.cache_resource()
@@ -121,8 +120,7 @@ def load_model_13(model_name_13):
     return (all_df_copy_places)
 
 
-all_df_copy_places = load_model_13(
-    'https://raw.githubusercontent.com/uroplatus666/StreamLit/refs/heads/master/data/all_df_copy_places.csv')
+all_df_copy_places = load_model_13('data/all_df_copy_places.csv')
 
 # 4. Manual item selection
 if st.session_state.get('switch_button', False):
