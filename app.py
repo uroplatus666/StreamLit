@@ -165,7 +165,6 @@ if selected == 'Карты':
             elevation = 1.5
 
         col1, col2, col3 = st.columns([5, 1, 2])
-        with col3:
             
         with col2:
             year = st.radio(
