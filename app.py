@@ -728,7 +728,7 @@ if selected == 'Карты':
                 initial_view_state=pdk.ViewState(
                     latitude=35.7522,
                     longitude=100.6156,
-                    zoom=3,
+                    zoom=2,
                     pitch=50,
                 ),
     
