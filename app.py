@@ -352,7 +352,7 @@ if selected == 'Карты':
 
             st.pydeck_chart(pdk.Deck(
                 initial_view_state=pdk.ViewState(
-                    latitude=55.7522,
+                    latitude=40.7522,
                     longitude=80.6156,
                     zoom=1.5,
                     pitch=50,
@@ -414,7 +414,7 @@ if selected == 'Карты':
         with col1:
             st.pydeck_chart(pdk.Deck(
                 initial_view_state=pdk.ViewState(
-                    latitude=55.7522,
+                    latitude=40.7522,
                     longitude=100.6156,
                     zoom=1.5,
                     pitch=50,
@@ -726,7 +726,7 @@ if selected == 'Карты':
         with col1:
             st.pydeck_chart(pdk.Deck(
                 initial_view_state=pdk.ViewState(
-                    latitude=55.7522,
+                    latitude=40.7522,
                     longitude=100.6156,
                     zoom=1.5,
                     pitch=50,
