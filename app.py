@@ -324,14 +324,14 @@ if selected == 'Карты':
     with st.container():
         st.subheader('***Пропускные пункты с нулевым фактическим количеством пересечений***', divider='green')
 
-        col1, col2, col3 = st.columns([1, 1, 6])
+        col1, col2, col3 = st.columns([6, 1, 1])
         with col2:
             st.write('')
             year_2 = st.radio(
                 "**:green[Выберите год]**",
                 [2017, 2018, 2019, 2020, 2021, 2022])
-        with col3:
-            col1, col2 = st.columns([1, 0.6])
+        with col1:
+            col1, col2 = st.columns([1, 0.9])
             with col2:
                 if year_2 == 2017:
                     st.markdown('''**:green[Функционирующие] :grey[пропускные пункты:] :green[19] :grey[единиц]**''')
