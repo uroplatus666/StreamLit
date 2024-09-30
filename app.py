@@ -396,21 +396,21 @@ if selected == 'Карты':
     st.write('---')
     with st.container():
         st.subheader('***Классификация пропускных пунктов по режиму работы***', divider='blue')
+        type = st.selectbox(
+            '**:gray[Выберите режим работы пропускных пунктов:]**',
+            ('Постоянный', 'Работающий на нерегулярной основе', 'Сезонный', 'Не определен', 'Временный'))
+        if type == 'Постоянный':
+            st.write('**Пропускных пунктов с :blue[постоянным] режимом работы :blue[298] штук**')
+        elif type == 'Работающий на нерегулярной основе':
+            st.write('**Пропускных пунктов с :blue[нерегулярным] режимом работы :blue[37] штук**')
+        elif type == 'Сезонный':
+            st.write('**Пропускных пунктов с :blue[сезонным] режимом работы :blue[16] штук**')
+        elif type == 'Не определен':
+            st.write('**Пропускных пунктов с :blue[не определенным] режимом работы :blue[16] штук**')
+        elif type == 'Временный':
+            st.write('**Пропускных пунктов с :blue[временным] режимом работы :blue[13] штук**')
         col1, col2 = st.columns([7, 1])
         with col1:
-            type = st.selectbox(
-                '**:gray[Выберите режим работы пропускных пунктов:]**',
-                ('Постоянный', 'Работающий на нерегулярной основе', 'Сезонный', 'Не определен', 'Временный'))
-            if type == 'Постоянный':
-                st.write('**Пропускных пунктов с :blue[постоянным] режимом работы :blue[298] штук**')
-            elif type == 'Работающий на нерегулярной основе':
-                st.write('**Пропускных пунктов с :blue[нерегулярным] режимом работы :blue[37] штук**')
-            elif type == 'Сезонный':
-                st.write('**Пропускных пунктов с :blue[сезонным] режимом работы :blue[16] штук**')
-            elif type == 'Не определен':
-                st.write('**Пропускных пунктов с :blue[не определенным] режимом работы :blue[16] штук**')
-            elif type == 'Временный':
-                st.write('**Пропускных пунктов с :blue[временным] режимом работы :blue[13] штук**')
             st.pydeck_chart(pdk.Deck(
                 initial_view_state=pdk.ViewState(
                     latitude=55.7522,
@@ -571,139 +571,141 @@ if selected == 'Карты':
             ('Число людей', 'Легковые транспортные средства',
              'Грузовые транспортные средства',
              'Паспорта транспортных средств', 'Грузы в тоннах'))
-        st.pydeck_chart(pdk.Deck(
-            initial_view_state=pdk.ViewState(
-                latitude=51.95957752,
-                longitude=47.49039297,
-                zoom=3,
-                pitch=50,
-            ),
-
-            layers=[pdk.Layer('ColumnLayer',
-                              data=Center[(Center['Категория'] == category_) &
-                                          (Center['Год'] == '2017 год')],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=75,
-                              get_color='[0, 168, 107, 210]',
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[95, 103, 106],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=Center[(Center['Категория'] == category_) &
-                                          (Center['Год'] == '2018 год')],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=125,
-                              get_color='[0, 168, 107, 210]',
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[79, 116, 126],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=Center[(Center['Категория'] == category_) &
-                                          (Center['Год'] == '2019 год')],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=175,
-                              get_color='[0, 168, 107, 210]',
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[18, 127, 155],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=Center[(Center['Категория'] == category_) &
-                                          (Center['Год'] == '2020 год')],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color='[0, 168, 107, 210]',
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[11, 191, 237],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=Center[(Center['Категория'] == category_) &
-                                          (Center['Год'] == '2021 год')],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=275,
-                              get_color='[0, 168, 107, 210]',
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[75, 215, 251],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=Center[(Center['Категория'] == category_) &
-                                          (Center['Год'] == '2022 год')],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=325,
-                              get_color='[0, 168, 107, 210]',
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[160, 234, 253],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=Center[(Center['Категория'] == category_) &
-                                          (Center['Год'] == 'Пропускная способность по паспорту')],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=375,
-                              get_color='[0, 168, 107, 210]',
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[7, 18, 246],
-                              opacity=0.8
-                              ),
-                    ],
-
-            tooltip={
-                "html": '<b>{Год}</b>',
-                "style": {"background": "grey", "color": "white", "font-family": '"Helvetica Neue", Arial',
-                          "z-index": "10000"},
-            }
-
-        ))
-        st.write('**:grey[Описание]	:thinking_face:**')
-        st.write('Каждая колонка на карте – средневзвешенное всех пересечений выбранной категории и года, ' + \
-                 'ее размер увеличивается и цвет становится светлее при увеличении года, ' + \
-                 'пропускную способность по паспорту в каждой категории отображает самая высокая колонка ярко-синего цвета.')
-
-        what = st.checkbox('**:blue[Что такое средневзвешенный центр]:grey_question:**')
-        if what:
-            st.write('**Средневзвешенный центр - точка,' + \
-                     ' являющаяся средним местоположение всех объектов в наборе данных. Местоположение рассчитывается по выбранному признаку:' + \
-                     ' в данном случае использовано количество пересечений разных категорий в разные года  ' + \
-                     'и максимальное установленное количество пересечений разных категорий.**')
+        col1, col2 = st.columns([7, 1])
+        with col1:
+            st.pydeck_chart(pdk.Deck(
+                initial_view_state=pdk.ViewState(
+                    latitude=51.95957752,
+                    longitude=47.49039297,
+                    zoom=3,
+                    pitch=50,
+                ),
+    
+                layers=[pdk.Layer('ColumnLayer',
+                                  data=Center[(Center['Категория'] == category_) &
+                                              (Center['Год'] == '2017 год')],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=75,
+                                  get_color='[0, 168, 107, 210]',
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[95, 103, 106],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=Center[(Center['Категория'] == category_) &
+                                              (Center['Год'] == '2018 год')],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=125,
+                                  get_color='[0, 168, 107, 210]',
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[79, 116, 126],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=Center[(Center['Категория'] == category_) &
+                                              (Center['Год'] == '2019 год')],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=175,
+                                  get_color='[0, 168, 107, 210]',
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[18, 127, 155],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=Center[(Center['Категория'] == category_) &
+                                              (Center['Год'] == '2020 год')],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=225,
+                                  get_color='[0, 168, 107, 210]',
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[11, 191, 237],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=Center[(Center['Категория'] == category_) &
+                                              (Center['Год'] == '2021 год')],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=275,
+                                  get_color='[0, 168, 107, 210]',
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[75, 215, 251],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=Center[(Center['Категория'] == category_) &
+                                              (Center['Год'] == '2022 год')],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=325,
+                                  get_color='[0, 168, 107, 210]',
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[160, 234, 253],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=Center[(Center['Категория'] == category_) &
+                                              (Center['Год'] == 'Пропускная способность по паспорту')],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=375,
+                                  get_color='[0, 168, 107, 210]',
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[7, 18, 246],
+                                  opacity=0.8
+                                  ),
+                        ],
+    
+                tooltip={
+                    "html": '<b>{Год}</b>',
+                    "style": {"background": "grey", "color": "white", "font-family": '"Helvetica Neue", Arial',
+                              "z-index": "10000"},
+                }
+    
+            ))
+            st.write('**:grey[Описание]	:thinking_face:**')
+            st.write('Каждая колонка на карте – средневзвешенное всех пересечений выбранной категории и года, ' + \
+                     'ее размер увеличивается и цвет становится светлее при увеличении года, ' + \
+                     'пропускную способность по паспорту в каждой категории отображает самая высокая колонка ярко-синего цвета.')
+    
+            what = st.checkbox('**:blue[Что такое средневзвешенный центр]:grey_question:**')
+            if what:
+                st.write('**Средневзвешенный центр - точка,' + \
+                         ' являющаяся средним местоположение всех объектов в наборе данных. Местоположение рассчитывается по выбранному признаку:' + \
+                         ' в данном случае использовано количество пересечений разных категорий в разные года  ' + \
+                         'и максимальное установленное количество пересечений разных категорий.**')
     st.write('---')
     with st.container():
         st.subheader('***Пространственная структура пропускных пунктов на участках***', divider='blue')
@@ -717,193 +719,194 @@ if selected == 'Карты':
             st.write('**У :blue[39] пропускны пунктов :blue[рассредоточенная] пространственная структура**')
         elif method == 'Случайное':
             st.write('**У :blue[35] пропускны пунктов :blue[случайная] пространственная структура**')
-
-        st.pydeck_chart(pdk.Deck(
-            initial_view_state=pdk.ViewState(
-                latitude=55.7522,
-                longitude=100.6156,
-                zoom=1.5,
-                pitch=50,
-            ),
-
-            layers=[pdk.Layer('ColumnLayer',
-                              data=ANN[(ANN['Распределение'] == method) &
-                                       (ANN['Сопредельное_государство'] == 'Китайская Народная Республика')],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[72, 118, 255],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[72, 118, 255],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=ANN[(ANN['Распределение'] == method) &
-                                       (ANN['Сопредельное_государство'] == 'Республика Казахстан')],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[131, 111, 255],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[131, 111, 255],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=ANN[(ANN['Распределение'] == method) &
-                                       (ANN['Сопредельное_государство'] == 'Монголия')],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[240, 255, 255],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[240, 255, 255],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=ANN[(ANN['Распределение'] == method) &
-                                       (ANN['Сопредельное_государство'] == 'Финляндская Республика')],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[0, 0, 255],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[0, 0, 255],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=ANN[(ANN['Распределение'] == method) &
-                                       (ANN['Сопредельное_государство'] == 'Украина')],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[0, 245, 255],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[0, 245, 255],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=ANN[(ANN['Распределение'] == method) &
-                                       (ANN['Сопредельное_государство'] == 'Литовская Республика')],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[127, 255, 212],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[127, 255, 212],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=ANN[(ANN['Распределение'] == method) &
-                                       (ANN['Сопредельное_государство'] == 'Республика Польша')],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[164, 211, 238],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[164, 211, 238],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=ANN[(ANN['Распределение'] == method) &
-                                       (ANN['Сопредельное_государство'] == 'Эстонская Республика')],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[188, 238, 104],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[188, 238, 104],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=ANN[(ANN['Распределение'] == method) &
-                                       (ANN['Сопредельное_государство'] == 'Латвийская Республика')],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[238, 180, 180],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[238, 180, 180],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=ANN[(ANN['Распределение'] == method) &
-                                       (ANN['Сопредельное_государство'] == 'Азербайджанская Республика')],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[238, 174, 238],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[238, 174, 238],
-                              opacity=0.8
-                              ),
-                    ],
-
-            tooltip={
-                "html": '<b>{Вид}</b> <b>{Наименование_пункта_пропуска}</b>, <b>{Сопредельное_государство}</b>',
-                "style": {"background": "grey", "color": "white", "font-family": '"Helvetica Neue", Arial',
-                          "z-index": "10000"},
-            }
-        ))
-        st.write('**:grey[Описание]	:thinking_face:**')
-        st.write('Каждая колонка на карте – пропускной пункт с выбранным типом распределения. ' + \
-                 'Размер колонок одинаковый. ' + \
-                 'Пропускные пункты, относящиеся к одному участку обозначены одним цветом.')
-        show = st.checkbox('**:blue[Посмотреть рассматриваемые участки]**')
-        if show:
-            col1, col2, col3 = st.columns([1.5, 1, 1])
-            with col1:
-                st.write('**:grey[Азербайджанская Республика]**')
-                st.write('**:grey[Китайская Народная Республика]**')
-                st.write('**:grey[Латвийская Республика]**')
-                st.write('**:grey[Литовская Республика]**')
-            with col2:
-                st.write('**:grey[Монголия]**')
-                st.write('**:grey[Республика Казахстан]**')
-                st.write('**:grey[Республика Польша]**')
-            with col3:
-                st.write('**:grey[Украина]**')
-                st.write('**:grey[Финляндская Республика]**')
-                st.write('**:grey[Эстонская Республика]**')
+        col1, col2 = st.columns([7, 1])
+        with col1:
+            st.pydeck_chart(pdk.Deck(
+                initial_view_state=pdk.ViewState(
+                    latitude=55.7522,
+                    longitude=100.6156,
+                    zoom=1.5,
+                    pitch=50,
+                ),
+    
+                layers=[pdk.Layer('ColumnLayer',
+                                  data=ANN[(ANN['Распределение'] == method) &
+                                           (ANN['Сопредельное_государство'] == 'Китайская Народная Республика')],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=225,
+                                  get_color=[72, 118, 255],
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[72, 118, 255],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=ANN[(ANN['Распределение'] == method) &
+                                           (ANN['Сопредельное_государство'] == 'Республика Казахстан')],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=225,
+                                  get_color=[131, 111, 255],
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[131, 111, 255],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=ANN[(ANN['Распределение'] == method) &
+                                           (ANN['Сопредельное_государство'] == 'Монголия')],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=225,
+                                  get_color=[240, 255, 255],
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[240, 255, 255],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=ANN[(ANN['Распределение'] == method) &
+                                           (ANN['Сопредельное_государство'] == 'Финляндская Республика')],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=225,
+                                  get_color=[0, 0, 255],
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[0, 0, 255],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=ANN[(ANN['Распределение'] == method) &
+                                           (ANN['Сопредельное_государство'] == 'Украина')],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=225,
+                                  get_color=[0, 245, 255],
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[0, 245, 255],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=ANN[(ANN['Распределение'] == method) &
+                                           (ANN['Сопредельное_государство'] == 'Литовская Республика')],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=225,
+                                  get_color=[127, 255, 212],
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[127, 255, 212],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=ANN[(ANN['Распределение'] == method) &
+                                           (ANN['Сопредельное_государство'] == 'Республика Польша')],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=225,
+                                  get_color=[164, 211, 238],
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[164, 211, 238],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=ANN[(ANN['Распределение'] == method) &
+                                           (ANN['Сопредельное_государство'] == 'Эстонская Республика')],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=225,
+                                  get_color=[188, 238, 104],
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[188, 238, 104],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=ANN[(ANN['Распределение'] == method) &
+                                           (ANN['Сопредельное_государство'] == 'Латвийская Республика')],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=225,
+                                  get_color=[238, 180, 180],
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[238, 180, 180],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=ANN[(ANN['Распределение'] == method) &
+                                           (ANN['Сопредельное_государство'] == 'Азербайджанская Республика')],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=225,
+                                  get_color=[238, 174, 238],
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[238, 174, 238],
+                                  opacity=0.8
+                                  ),
+                        ],
+    
+                tooltip={
+                    "html": '<b>{Вид}</b> <b>{Наименование_пункта_пропуска}</b>, <b>{Сопредельное_государство}</b>',
+                    "style": {"background": "grey", "color": "white", "font-family": '"Helvetica Neue", Arial',
+                              "z-index": "10000"},
+                }
+            ))
+            st.write('**:grey[Описание]	:thinking_face:**')
+            st.write('Каждая колонка на карте – пропускной пункт с выбранным типом распределения. ' + \
+                     'Размер колонок одинаковый. ' + \
+                     'Пропускные пункты, относящиеся к одному участку обозначены одним цветом.')
+            show = st.checkbox('**:blue[Посмотреть рассматриваемые участки]**')
+            if show:
+                col1, col2, col3 = st.columns([1.5, 1, 1])
+                with col1:
+                    st.write('**:grey[Азербайджанская Республика]**')
+                    st.write('**:grey[Китайская Народная Республика]**')
+                    st.write('**:grey[Латвийская Республика]**')
+                    st.write('**:grey[Литовская Республика]**')
+                with col2:
+                    st.write('**:grey[Монголия]**')
+                    st.write('**:grey[Республика Казахстан]**')
+                    st.write('**:grey[Республика Польша]**')
+                with col3:
+                    st.write('**:grey[Украина]**')
+                    st.write('**:grey[Финляндская Республика]**')
+                    st.write('**:grey[Эстонская Республика]**')
 
     with st.container():
         col1, col2 = st.columns([2, 1])
