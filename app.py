@@ -354,7 +354,7 @@ if selected == 'Карты':
                 initial_view_state=pdk.ViewState(
                     latitude=40.7522,
                     longitude=80.6156,
-                    zoom=1.5,
+                    zoom=2,
                     pitch=50,
                 ),
                 layers=[pdk.Layer('ColumnLayer',
