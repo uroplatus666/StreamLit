@@ -6,6 +6,7 @@ import plotly.graph_objects as go
 import pydeck as pdk
 #from streamlit_extras.let_it_rain import rain
 
+st.set_page_config(layout="wide")
 
 @st.cache_resource()
 def load_model_1(model_name_1):
