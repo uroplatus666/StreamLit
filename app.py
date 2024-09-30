@@ -284,41 +284,41 @@ if selected == 'Карты':
                     st.write('**Количество перегруженных пропускных пунктов: :red[6]**')
                 elif year == 2022:
                     st.write('**Количество перегруженных пропускных пунктов: :red[9]**')
-            st.pydeck_chart(pdk.Deck(
-                initial_view_state=pdk.ViewState(
-                    latitude=55.7522,
-                    longitude=80.6156,
-                    zoom=1.5,
-                    pitch=50,
-                ),
-                layers=[pdk.Layer('ColumnLayer',
-                                  data=all_df_copy_na[
-                                      (all_df_copy_na['Категория'] == categoryy) & (all_df_copy_na['Год'] == year)],
-                                  get_position='[longitude, latitude]',
-                                  radius=20000,
-                                  elevation_scale=1000,
-                                  get_color='[205, 0, 0, 160]',
-                                  get_elevation=1000,
-                                  pickable=True,
-                                  extruded=True,
-                                  ),
-                        ],
-
-                tooltip={
-                    "html": "<b>{Вид}</b> <b>{Наименование пункта пропуска}</b>, максимально допустимое количество пересечений превышено в <b>{Количество (Факт/Паспорт)}</b> раз(а)",
-                    "style": {"background": "grey", "color": "white", "font-family": '"Helvetica Neue", Arial',
-                              "z-index": "10000"},
-                }
-            ))
-        st.write('**:grey[Описание]	:thinking_face:**')
-        st.write('Каждая колонка на карте – перегруженный пропускной пункт. ' + \
-                 'Размер колонок одинаковый.')
-        question = st.checkbox('**:red[Какой пункт считается перегруженным]:grey_question:**')
-        if question:
-            st.write('**У каждого пункта пропуска есть максимальная установленная пропускная способность, ' + \
-                     'но есть пропускные пункты, фактическое количество пересечений которых превышает максимально возморжное. ' + \
-                     'Пропускной пункт считается перегруженным, ' + \
-                     'если результат деления фактического количества пересечений на максимально возможно превышает единицу.**')
+                st.pydeck_chart(pdk.Deck(
+                    initial_view_state=pdk.ViewState(
+                        latitude=55.7522,
+                        longitude=80.6156,
+                        zoom=1.5,
+                        pitch=50,
+                    ),
+                    layers=[pdk.Layer('ColumnLayer',
+                                      data=all_df_copy_na[
+                                          (all_df_copy_na['Категория'] == categoryy) & (all_df_copy_na['Год'] == year)],
+                                      get_position='[longitude, latitude]',
+                                      radius=20000,
+                                      elevation_scale=1000,
+                                      get_color='[205, 0, 0, 160]',
+                                      get_elevation=1000,
+                                      pickable=True,
+                                      extruded=True,
+                                      ),
+                            ],
+    
+                    tooltip={
+                        "html": "<b>{Вид}</b> <b>{Наименование пункта пропуска}</b>, максимально допустимое количество пересечений превышено в <b>{Количество (Факт/Паспорт)}</b> раз(а)",
+                        "style": {"background": "grey", "color": "white", "font-family": '"Helvetica Neue", Arial',
+                                  "z-index": "10000"},
+                    }
+                ))
+            st.write('**:grey[Описание]	:thinking_face:**')
+            st.write('Каждая колонка на карте – перегруженный пропускной пункт. ' + \
+                     'Размер колонок одинаковый.')
+            question = st.checkbox('**:red[Какой пункт считается перегруженным]:grey_question:**')
+            if question:
+                st.write('**У каждого пункта пропуска есть максимальная установленная пропускная способность, ' + \
+                         'но есть пропускные пункты, фактическое количество пересечений которых превышает максимально возморжное. ' + \
+                         'Пропускной пункт считается перегруженным, ' + \
+                         'если результат деления фактического количества пересечений на максимально возможно превышает единицу.**')
     st.write('---')
 
     with st.container():
