@@ -409,7 +409,8 @@ if selected == 'Карты':
             st.write('**Пропускных пунктов с :blue[не определенным] режимом работы :blue[16] штук**')
         elif type == 'Временный':
             st.write('**Пропускных пунктов с :blue[временным] режимом работы :blue[13] штук**')
-        col1, col2 = st.columns([7, 1])
+            
+        col1, col2 = st.columns([6, 1])
         with col1:
             st.pydeck_chart(pdk.Deck(
                 initial_view_state=pdk.ViewState(
@@ -571,7 +572,8 @@ if selected == 'Карты':
             ('Число людей', 'Легковые транспортные средства',
              'Грузовые транспортные средства',
              'Паспорта транспортных средств', 'Грузы в тоннах'))
-        col1, col2 = st.columns([7, 1])
+        
+        col1, col2 = st.columns([6, 1])
         with col1:
             st.pydeck_chart(pdk.Deck(
                 initial_view_state=pdk.ViewState(
@@ -719,7 +721,8 @@ if selected == 'Карты':
             st.write('**У :blue[39] пропускны пунктов :blue[рассредоточенная] пространственная структура**')
         elif method == 'Случайное':
             st.write('**У :blue[35] пропускны пунктов :blue[случайная] пространственная структура**')
-        col1, col2 = st.columns([7, 1])
+            
+        col1, col2 = st.columns([6, 1])
         with col1:
             st.pydeck_chart(pdk.Deck(
                 initial_view_state=pdk.ViewState(
