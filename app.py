@@ -164,7 +164,7 @@ if selected == 'Карты':
         elif category == 'Грузы в тоннах':
             elevation = 1.5
 
-        col1, col2, col3 = st.columns([5, 1, 2])
+        col1, col2, col3 = st.columns([6, 1, 1])
             
         with col2:
             year = st.radio(
@@ -212,7 +212,7 @@ if selected == 'Карты':
              'Паспорта транспортных средств',
              'Грузы в тоннах'))
 
-        col1, col2 = st.columns([7, 1])
+        col1, col2, col3 = st.columns([6, 1, 1])
 
         with col2:
             year = st.radio(
@@ -324,13 +324,13 @@ if selected == 'Карты':
     with st.container():
         st.subheader('***Пропускные пункты с нулевым фактическим количеством пересечений***', divider='green')
 
-        col1, col2 = st.columns([1, 7])
-        with col1:
+        col1, col2, col3 = st.columns([1, 1, 6])
+        with col2:
             st.write('')
             year_2 = st.radio(
                 "**:green[Выберите год]**",
                 [2017, 2018, 2019, 2020, 2021, 2022])
-        with col2:
+        with col3:
             col1, col2 = st.columns([1, 0.6])
             with col2:
                 if year_2 == 2017:
@@ -398,164 +398,166 @@ if selected == 'Карты':
     st.write('---')
     with st.container():
         st.subheader('***Классификация пропускных пунктов по режиму работы***', divider='blue')
-        type = st.selectbox(
-            '**:gray[Выберите режим работы пропускных пунктов:]**',
-            ('Постоянный', 'Работающий на нерегулярной основе', 'Сезонный', 'Не определен', 'Временный'))
-        if type == 'Постоянный':
-            st.write('**Пропускных пунктов с :blue[постоянным] режимом работы :blue[298] штук**')
-        elif type == 'Работающий на нерегулярной основе':
-            st.write('**Пропускных пунктов с :blue[нерегулярным] режимом работы :blue[37] штук**')
-        elif type == 'Сезонный':
-            st.write('**Пропускных пунктов с :blue[сезонным] режимом работы :blue[16] штук**')
-        elif type == 'Не определен':
-            st.write('**Пропускных пунктов с :blue[не определенным] режимом работы :blue[16] штук**')
-        elif type == 'Временный':
-            st.write('**Пропускных пунктов с :blue[временным] режимом работы :blue[13] штук**')
-        st.pydeck_chart(pdk.Deck(
-            initial_view_state=pdk.ViewState(
-                latitude=55.7522,
-                longitude=100.6156,
-                zoom=1.5,
-                pitch=50,
-            ),
-
-            layers=[pdk.Layer('ColumnLayer',
-                              data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
-                                           ((rosgran['Сопредельное государство'] == 'Китайская Народная Республика') |
-                                            (rosgran['Сопредельное государство'] == 'Финляндская Республика'))],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[72, 118, 255],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[72, 118, 255],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
-                                           ((rosgran['Сопредельное государство'] == 'Республика Казахстан') |
-                                            (rosgran['Сопредельное государство'] == 'Эстонская Республика'))],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[131, 111, 255],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[131, 111, 255],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
-                                           ((rosgran['Сопредельное государство'] == 'Монголия') |
-                                            (rosgran['Сопредельное государство'] == 'Латвийская Республика'))],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[240, 255, 255],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[240, 255, 255],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
-                                           ((rosgran['Сопредельное государство'] == 'Республика Грузия') |
-                                            (rosgran['Сопредельное государство'] == 'Королевство Норвегия'))],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[0, 0, 255],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[0, 0, 255],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
-                                           ((rosgran['Сопредельное государство'] == 'Украина') |
-                                            (rosgran['Сопредельное государство'] == 'утратило значение (Украина)'))],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[0, 245, 255],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[0, 245, 255],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
-                                           ((rosgran[
-                                                 'Сопредельное государство'] == 'Корейская Народно-Демократическая Республика') |
-                                            (rosgran['Сопредельное государство'] == 'Республика Южная Осетия') |
-                                            (rosgran['Сопредельное государство'] == 'Литовская Республика'))],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[127, 255, 212],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[127, 255, 212],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
-                                           ((rosgran['Сопредельное государство'] == 'Республика Польша') |
-                                            (rosgran['Сопредельное государство'] == 'Азербайджанская Республика'))],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[164, 211, 238],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[164, 211, 238],
-                              opacity=0.8
-                              ),
-                    pdk.Layer('ColumnLayer',
-                              data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
-                                           (rosgran['Сосед'] == 'нет')],
-                              get_position='[longitude,latitude]',
-                              radius_scale=9000,
-                              radius=10000,
-                              elevation=100000,
-                              elevation_scale=225,
-                              get_color=[255, 48, 48],
-                              pickable=True,
-                              stroked=True,
-                              filled=True,
-                              get_fill_color=[255, 48, 48],
-                              opacity=0.8
-                              ),
-                    ],
-
-            tooltip={
-                "html": '<b>{Вид}</b> <b>{Наименование пункта пропуска_y}</b>, \nсопредельное государство: <b>{Сосед}</b>',
-                "style": {"background": "grey", "color": "white", "font-family": '"Helvetica Neue", Arial',
-                          "z-index": "10000"},
-            }
-        ))
+        col1, col2 = st.columns([7, 1])
+        with col2:
+            type = st.selectbox(
+                '**:gray[Выберите режим работы пропускных пунктов:]**',
+                ('Постоянный', 'Работающий на нерегулярной основе', 'Сезонный', 'Не определен', 'Временный'))
+            if type == 'Постоянный':
+                st.write('**Пропускных пунктов с :blue[постоянным] режимом работы :blue[298] штук**')
+            elif type == 'Работающий на нерегулярной основе':
+                st.write('**Пропускных пунктов с :blue[нерегулярным] режимом работы :blue[37] штук**')
+            elif type == 'Сезонный':
+                st.write('**Пропускных пунктов с :blue[сезонным] режимом работы :blue[16] штук**')
+            elif type == 'Не определен':
+                st.write('**Пропускных пунктов с :blue[не определенным] режимом работы :blue[16] штук**')
+            elif type == 'Временный':
+                st.write('**Пропускных пунктов с :blue[временным] режимом работы :blue[13] штук**')
+            st.pydeck_chart(pdk.Deck(
+                initial_view_state=pdk.ViewState(
+                    latitude=55.7522,
+                    longitude=100.6156,
+                    zoom=1.5,
+                    pitch=50,
+                ),
+    
+                layers=[pdk.Layer('ColumnLayer',
+                                  data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
+                                               ((rosgran['Сопредельное государство'] == 'Китайская Народная Республика') |
+                                                (rosgran['Сопредельное государство'] == 'Финляндская Республика'))],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=225,
+                                  get_color=[72, 118, 255],
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[72, 118, 255],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
+                                               ((rosgran['Сопредельное государство'] == 'Республика Казахстан') |
+                                                (rosgran['Сопредельное государство'] == 'Эстонская Республика'))],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=225,
+                                  get_color=[131, 111, 255],
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[131, 111, 255],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
+                                               ((rosgran['Сопредельное государство'] == 'Монголия') |
+                                                (rosgran['Сопредельное государство'] == 'Латвийская Республика'))],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=225,
+                                  get_color=[240, 255, 255],
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[240, 255, 255],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
+                                               ((rosgran['Сопредельное государство'] == 'Республика Грузия') |
+                                                (rosgran['Сопредельное государство'] == 'Королевство Норвегия'))],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=225,
+                                  get_color=[0, 0, 255],
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[0, 0, 255],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
+                                               ((rosgran['Сопредельное государство'] == 'Украина') |
+                                                (rosgran['Сопредельное государство'] == 'утратило значение (Украина)'))],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=225,
+                                  get_color=[0, 245, 255],
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[0, 245, 255],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
+                                               ((rosgran[
+                                                     'Сопредельное государство'] == 'Корейская Народно-Демократическая Республика') |
+                                                (rosgran['Сопредельное государство'] == 'Республика Южная Осетия') |
+                                                (rosgran['Сопредельное государство'] == 'Литовская Республика'))],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=225,
+                                  get_color=[127, 255, 212],
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[127, 255, 212],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
+                                               ((rosgran['Сопредельное государство'] == 'Республика Польша') |
+                                                (rosgran['Сопредельное государство'] == 'Азербайджанская Республика'))],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=225,
+                                  get_color=[164, 211, 238],
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[164, 211, 238],
+                                  opacity=0.8
+                                  ),
+                        pdk.Layer('ColumnLayer',
+                                  data=rosgran[(rosgran['Классификация по режиму работы'] == str.lower(type)) &
+                                               (rosgran['Сосед'] == 'нет')],
+                                  get_position='[longitude,latitude]',
+                                  radius_scale=9000,
+                                  radius=10000,
+                                  elevation=100000,
+                                  elevation_scale=225,
+                                  get_color=[255, 48, 48],
+                                  pickable=True,
+                                  stroked=True,
+                                  filled=True,
+                                  get_fill_color=[255, 48, 48],
+                                  opacity=0.8
+                                  ),
+                        ],
+    
+                tooltip={
+                    "html": '<b>{Вид}</b> <b>{Наименование пункта пропуска_y}</b>, \nсопредельное государство: <b>{Сосед}</b>',
+                    "style": {"background": "grey", "color": "white", "font-family": '"Helvetica Neue", Arial',
+                              "z-index": "10000"},
+                }
+            ))
         st.write('**:grey[Описание]	:thinking_face:**')
         st.write('Каждая колонка на карте – пропускной пункт с выбранным режимом работы. ' + \
                  'Размер колонок одинаковый. ' + \
