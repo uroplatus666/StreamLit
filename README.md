@@ -1,46 +1,23 @@
 # Визуализация данных по пограничным пропускным пунктам РФ
-## Карты
-[Логика]
-![example-1](data/page_1.jpg)
+## Разделы
+![example-1](data/example_0.jpg)
+
+## Пример из раздела *Карты*
+![example-1](data/example_1.jpg)
 
 _____________________________________________________________________________
 
-## Статистика по Федеральным округам
-[Логика]
-![example-2](data/page_2.jpg)
+## Пример из раздела *Статистика по Федеральным округам*
+![example-2](data/example_2.jpg)
 _____________________________________________________________________________
 
-## Статистика по участкам
-[Логика]
-![example-2](data/page_3.jpg)
+## Пример из раздела *Статистика по участкам*
+![example-2](data/example_3.jpg)
+
+
 
 #### В веб-приложении находится статистика по пунктам пропуска через государственную границу РФ за 2017-2022, [данные](data/Копия%20ПП.xlsx) предоставлены Дирекцией по стрфоительству и эксплуатации объектов Росграницы Министерства транспорта РФ
 
+[Сценарии сайта](https://miro.com/app/board/uXjVNh1-bDs=/?share_link_id=76912559185&shareablePresentation=1)
+
 [Посмотреть веб-приложение](https://app-yya23xqsosea2xcovd3wlh.streamlit.app/)
-
-## Getting Started
-
-### Как запустить приложение локально? см.ниже
-Создайте виртуальную среду и установите все нужные библиотеки туда
-
-```
-git clone https://github.com/uroplatus/StreamLit
-cd StreamLit
-python3 -m virtualenv venv
-```
-Активируйте виртуальную среду (Windows): 
-
-```
-venv\Scripts\activate
-```
-
-Установите нужные библиотеки:
-
-```
-pip install -r requirements.txt
-```
-
-Заппустите код
-
-Dash app inspired by [this Tableau dashboard](https://www.cdc.gov/nchs/data-visualization/drug-poisoning-mortality/)
-
